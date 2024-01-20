@@ -31,7 +31,6 @@ fn main() {
         let name = _locale_code.as_bytes();
         let locale: Locale = Locale::try_from_bytes(name).unwrap();
 
-        // ====LOOK HERE #2====
         // Use either the blob provider, and then deserialize it
         let provider = get_blob_provider(blob_path);
         let provider = provider.as_deserializing();
@@ -129,7 +128,6 @@ fn main() {
         println!("Failed: {:?}\nTotal: {:?}/85\n", failed, failed.len());
         println!("=====================\n\n")
     }
-    // SWITCH BETWEEN THESE TWO TO TEST THE DIFFERENT BLOBS
     const SPECIFIED_BLOB_PATH: &str = "specified.blob";
     const UN_SPECIFIED_BLOB_PATH: &str = "non-specified.blob";
     const INCLUDE_ZH_LOCALES: &str = "non-specified-zh.blob";
