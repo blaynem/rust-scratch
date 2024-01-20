@@ -63,6 +63,14 @@ We now specifically incldue the 2 failing codes, yet `zh_TW` still fails.
 
 My assumption was the generated data from `icu-datagen` would be a drop in replacement of the baked data.
 
+### Well how do we know the blob data isn't wrong?
+
+Uh, good question. Kinda hard to tell. But! We can actually call the same `icu4x-datagen` command but this time with the format set to `dir` and we can see the data compiled to json. It seems like the correct data is generated. The below command is the exact same as the first one we used to generate blobs. The only differences are we changed from `--format blob --out specified.blob` -> `--format dir --out specified`
+
+```sh
+icu4x-datagen --keys all --locales ar_AE ar_BH ar_EG ar_IQ ar_LB ar_QA ar_SA ar_TN bg_BG cs_CZ da_DK de_AT de_BE de_CH de_DE de_LU el_GR en_AU en_CA en_GB en_HK en_IE en_IN en_NZ en_PH en_SG en_US en_ZA es_AR es_CL es_CO es_CR es_DO es_EC es_ES es_GT es_HN es_MX es_NI es_PA es_PE es_PR es_PY es_SV es_US es_UY es_VE et_EE fi_FI fr_BE fr_CA fr_CH fr_FR fr_LU he_IL hr_HR hu_HU id_ID is_IS it_CH it_IT ja_JP ko_KR lt_LT lv_LV ms_MY nl_BE nl_NL no_NO pl_PL pt_BR pt_PT ro_RO ru_RU sk_SK sl_SI sr_RS sv_SE th_TH tr_TR uk_UA vi_VN zh_CN zh_HK zh_TW --format dir --out specified
+```
+
 ### All locales we support
 
 ```
