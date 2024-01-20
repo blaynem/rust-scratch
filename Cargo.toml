@@ -1,0 +1,15 @@
+[package]
+name = "rust-scratch"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+icu = { version = "1.4.0", features = ["experimental", "serde"] }
+icu_capi = { version = "1.4.0", features = ["buffer_provider"] }
+icu_provider = { version = "1.4.0", features = ["experimental", "datagen"] }
+icu_datetime = { version = "1.4.0", features = ["experimental", "datagen"] }
+litemap = "0.7.2"
+zerovec = "0.10.1"
+icu_provider_blob = { version = "1.4.0" }
+icu_provider_adapters = { version = "1.4.0" }
+zerotrie = "0.1.2"
