@@ -1,3 +1,7 @@
+## Solution
+
+Fixed in this (PR)[https://github.com/unicode-org/icu4x/pull/4533]!
+
 ## Whats wrong?
 
 We have a list of locales that we support. However we are running into an issue with
