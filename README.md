@@ -43,6 +43,26 @@ Failed: ["zh_TW"]
 Total: 1/85
 ```
 
+### Whoopdy doo, what does it all mean?
+
+Well, the first thing to notice is that if we use the baked data, all of these locales pass the test. If you then use the generated data, you'll notice that each test differs a bit.
+
+#### "specified.blob"
+
+Half of the locales fail, despite us including the locale+region specifically.
+
+#### "non-specified.blob"
+
+Most of the locales pass when we exclude the region code, still 2 are failing `zh_HK` and `zh_TW`.
+
+#### "non-specified-zh.blob"
+
+We now specifically incldue the 2 failing codes, yet `zh_TW` still fails.
+
+#### Assumption
+
+My assumption was the generated data from `icu-datagen` would be a drop in replacement of the baked data.
+
 ### All locales we support
 
 ```
